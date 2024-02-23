@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import CreateFruits from './Fruits';
+import CreateNewWork from './NewWork';
+import CreteFooter from './Footer';
+import arrPic from './Allpic';
+import { useState} from 'react';
+
 
 function App() {
+
+  const [arr, setArr] = useState(arrPic);
+
+  const [jetons, setJetons] = useState(100)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='wrepper'>
+      <h1>СЛОТ-МАШИНА</h1>
+      <CreateFruits fruits={arr}/>
+      <CreateNewWork arr = {arr} setArr = {setArr} jetons={jetons} setJetons={setJetons}/>
+      <CreteFooter jetons={jetons}/>
     </div>
   );
 }
